@@ -1,0 +1,15 @@
+<h1>facultad-form </h1>
+<form [formGroup]="facultadform" (ngSubmit)="save()">
+
+    <label>
+        Nombre:
+        <input type="text" formControlName="nombre" name="nombre" id="nombre" required>
+        <div [hidden]="facultadform.get('nombre').valid || 
+        facultadform.get('nombre').pristine" class="alert alert-danger">
+            Titulo is required
+        </div>
+    </label>
+    <br>
+    <button type="submit" [disabled]="!facultadform.valid">Save</button>
+</form>
+<p>{{ facultadform.value | json }}</p>

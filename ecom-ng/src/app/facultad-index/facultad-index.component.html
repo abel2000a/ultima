@@ -1,0 +1,14 @@
+<p>facultad-index works!</p>
+<nav>
+  <a routerLink="/facultadform" routerLinkActive="active">New facultad</a> <br>
+
+</nav>
+<div *ngFor="let f of list">
+    <span>{{ f.nombre }}</span>
+    <span>{{ f.id }}</span>
+
+    <span><a routerLink="/facultadform/{{ f.id }}" routerLinkActive="active">Edit</a></span>
+    <span><button (click)="delete(f.id)">Delete</button></span>
+
+  </div>
+  
